@@ -1,0 +1,1 @@
+@if($page->hasPages())<nav class="pagination" aria-label="Stranice">@if($page->previousPageUrl())<a href="{{ $page->previousPageUrl() }}">← Prethodna</a>@endif<strong>{{ $page->currentPage() }} / {{ $page->lastPage() }}</strong>@if($page->nextPageUrl())<a href="{{ $page->nextPageUrl() }}">Sljedeća →</a>@endif</nav>@endif

@@ -1,0 +1,1 @@
+<nav class="admin-nav" aria-label="Administracija"><a href="{{ route('admin.index') }}">Ponude</a><a href="{{ route('admin.lists') }}">Gradovi i kategorije</a>@if(auth()->user()->hasPermission('manage_users'))<a href="{{ route('admin.users') }}">Korisnici i uloge</a>@endif<a href="{{ route('catalog') }}">Pogledaj stranicu ↗</a></nav>
