@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <section class="hero">
-    <div class="hero-copy"><span class="eyebrow">BOSNA I HERCEGOVINA / HERCEGOVINA</span><h1>Tvoj sljedeći izlet<br>je bliže nego misliš.</h1><p>Od Neretve do mora. Pronađi mjesto za svoj slobodan dan.</p><a href="#ponuda" class="hero-link">Pronađi svoj doživljaj <span>↓</span></a></div>
+    <div class="hero-copy"><span class="eyebrow">BOSNA I HERCEGOVINA / HERCEGOVINA</span><h1>Tvoj sljedeći izlet<br>je bliže nego misliš.</h1><p>Od Neretve do mora. Pronađi mjesto za svoj slobodan dan.</p><a href="#ponuda" class="hero-link">Istraži turističke ponude <span>↓</span></a></div>
     <div class="hero-photo"><img src="{{ asset('images/mostar.jpg') }}" alt="Stari most i Neretva u Mostaru"><span class="photo-caption">01 / MOSTAR · STARI MOST</span></div>
 </section>
 <div class="section-heading" id="ponuda"><div><span class="eyebrow">KRENI OD ONOGA ŠTO VOLIŠ</span><h2>Istraži Hercegovinu</h2></div><span class="muted">Tvoj tempo. Tvoj plan.</span></div>
