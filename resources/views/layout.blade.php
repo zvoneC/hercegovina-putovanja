@@ -36,6 +36,6 @@
     @if($errors->any())<div class="notice error" role="alert"><strong>Provjerite unesene podatke.</strong><ul>@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
     @yield('content')
 </main>
-<footer class="site-footer container"><a class="footer-brand" href="{{ route('catalog') }}">hercegovina.</a><p>Gradovi, ljudi i mjesta kojima se vraćamo.</p><a href="{{ route('about') }}">O projektu i izvorima</a><span>Studentski projekt · FPMOZ</span></footer>
+<footer class="site-footer container"><a class="footer-brand" href="{{ route('catalog') }}">hercegovina.</a><p>Otkrij Hercegovinu, jedno mjesto po jedno.</p><a href="{{ route('about') }}">O projektu i izvorima</a><span>Studentski projekt · FPMOZ</span></footer>
 @stack('scripts')
 </body></html>
