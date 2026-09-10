@@ -24,7 +24,8 @@ class TripController extends Controller
     public function store(Request $request, Offer $offer)
     {
         abort_unless($offer->active, 404);
-        $item = $request->user()->tripItems()->firstOrCreate(['offer_id' => $offer->id]);
+        $data = $request->validate(['note' => 'required|string|max:500']);
+        $item = $request->user()->tripItems()->firstOrCreate(['offer_id' => $offer->id], ['note' => $data['note']]);
 
         return redirect()->route('trip')->with('success', $item->wasRecentlyCreated ? 'Ponuda je dodana u vaš plan.' : 'Ova ponuda je već u vašem planu.');
     }
@@ -32,7 +33,7 @@ class TripController extends Controller
     public function update(Request $request, TripItem $item)
     {
         abort_unless($item->user_id === $request->user()->id, 403);
-        $data = $request->validate(['visit_date' => 'nullable|date_format:Y-m-d|after_or_equal:today', 'persons' => 'required|integer|min:1|max:20', 'note' => 'nullable|string|max:500']);
+        $data = $request->validate(['visit_date' => 'nullable|date_format:Y-m-d|after_or_equal:today', 'persons' => 'required|integer|min:1|max:20', 'note' => 'required|string|max:500']);
         $item->update($data);
 
         return back()->with('success', 'Plan je spremljen.');
