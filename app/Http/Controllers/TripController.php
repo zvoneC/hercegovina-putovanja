@@ -24,8 +24,7 @@ class TripController extends Controller
     public function store(Request $request, Offer $offer)
     {
         abort_unless($offer->active, 404);
-        $data = $request->validate(['note' => 'required|string|max:500']);
-        $item = $request->user()->tripItems()->firstOrCreate(['offer_id' => $offer->id], ['note' => $data['note']]);
+        $item = $request->user()->tripItems()->firstOrCreate(['offer_id' => $offer->id]);
 
         return redirect()->route('trip')->with('success', $item->wasRecentlyCreated ? 'Ponuda je dodana u vaš plan.' : 'Ova ponuda je već u vašem planu.');
     }
